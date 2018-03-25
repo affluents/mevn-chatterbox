@@ -29,7 +29,7 @@
                         </b-form-input>
                     </b-form-group>
                         </div>
-                    <b-button type="submit" variant="primary">Login</b-button>
+                    <b-button type="submit" variant="primary" href="/ChatMain">Login</b-button>
                     </b-form>
                 </div>
             </b-tab>

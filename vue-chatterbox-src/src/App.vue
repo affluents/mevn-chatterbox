@@ -3,7 +3,6 @@
     <nav class="navbar fixed-top " style="background-color: #AED09E;">
         <span id="nav_text" class="navbar-brand mb-0 mx-auto unselectable">ChatterBox</span>
     </nav>
-    <Login></Login>
     <router-view/>
   </div>
 </template>
