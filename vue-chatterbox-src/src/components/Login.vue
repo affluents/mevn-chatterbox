@@ -4,7 +4,7 @@
         <b-tabs id="tabs">
             <b-tab title="Login" active>
                 <div>
-                    <b-form @submit="onSubmit">
+                    <b-form @submit="onLoginSubmit">
                         <div id="textalign">
                             <b-form-group id="emailGroup"
                                     label="Email address:"
@@ -12,7 +12,7 @@
                                     class="unselectable">
                         <b-form-input id="email"
                                     type="email"
-                                    v-model="form.email"
+                                    v-model="loginForm.email"
                                     required
                                     placeholder="Enter email">
                         </b-form-input>
@@ -23,7 +23,7 @@
                                     class="unselectable">
                         <b-form-input id="password"
                                     type="password"
-                                    v-model="form.password"
+                                    v-model="loginForm.password"
                                     required
                                     placeholder="Enter password">
                         </b-form-input>
@@ -35,7 +35,7 @@
             </b-tab>
             <b-tab title="Sign Up" >
                <div>
-                    <b-form @submit="onSubmit">
+                    <b-form @submit="onSignUpSubmit">
                         <div id="textalign">
                             <b-form-group id="newEmailGroup"
                                     label="Email address:"
@@ -44,7 +44,7 @@
                                     class="unselectable">
                         <b-form-input id="new_email"
                                     type="email"
-                                    v-model="form.email"
+                                    v-model="signUpForm.email"
                                     required
                                     placeholder="Email address">
                         </b-form-input>
@@ -55,7 +55,7 @@
                                     class="unselectable">
                         <b-form-input id="name"
                                     type="text"
-                                    v-model="form.name"
+                                    v-model="signUpForm.name"
                                     required
                                     placeholder="Enter name">
                         </b-form-input>
@@ -66,7 +66,7 @@
                                     class="unselectable">
                         <b-form-input id="new_password"
                                     type="password"
-                                    v-model="form.password"
+                                    v-model="signUpForm.password"
                                     required
                                     placeholder="New password">
                         </b-form-input>
@@ -87,17 +87,23 @@ export default {
   name: 'Login',
   data() {
       return {
-          
-          form: {
+          loginForm: {
+              email: '',
+              password:''
+          },
+          signUpForm: {
               name: '',
               email: '',
-              password:'',
+              password:''
           }
       }
   },
   methods: {
-      onSubmit: function() {
-          alert('HELLOO')
+      onLoginSubmit: function() {
+          alert(JSON.stringify(this.loginForm))
+      },
+      onSignUpSubmit() {
+          alert(JSON.stringify(this.signUpForm))
       }
   }
 }
